@@ -21,6 +21,9 @@ fittnes_class_repository.save(fittness_class2)
 fittness_class3 = Fitnes_class('Absolute Abs', 'Hard','25min')
 fittnes_class_repository.save(fittness_class3)
 
+member1 = Member('Claire', 'Toth', '09/23/1976','claire@gmail.com')
+member_repository.save(member1)
+
 
 
 pdb.set_trace()

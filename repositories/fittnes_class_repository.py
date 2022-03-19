@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.fittnes_class import Fitnes_class
 from models.member import Member
+from models.gym import Gym
 
 def save(fittnes_class):
     sql = "INSERT INTO fittnes_classes(name, fittnes_level, duration) VALUES ( %s, %s, %s ) RETURNING id"

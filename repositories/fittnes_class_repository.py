@@ -29,3 +29,12 @@ def select(id):
     if result is not None:
         fittnes_class = Fitnes_class(result['name'], result['fittnes_level'], result['duration'], result['id'] )
     return fittnes_class
+
+def delete_all():
+    sql = "DELETE FROM fittnes_classes"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM fittnes_classes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

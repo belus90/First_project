@@ -1,7 +1,4 @@
-from tkinter.messagebox import NO
-
-
-class Fitness_class:
+class Fitnes_class:
 
     def __init__(self, name, fittnes_level, duration, id = None):
         self.name = name

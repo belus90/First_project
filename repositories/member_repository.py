@@ -31,3 +31,12 @@ def select(id):
         member = Member(result['first_name'], result['last_name'], result['date_of_birth'], result['email_address'], result['id'] )
     return member
 
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+

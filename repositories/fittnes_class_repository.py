@@ -12,10 +12,20 @@ def save(fittnes_class):
 def select_all():
     fittnes_classes = []
 
-    sql = "SELECT * FROM fittness_classes"
+    sql = "SELECT * FROM fittnes_classes"
     results = run_sql(sql)
 
     for row in results:
         fittnes_class = Fitnes_class(row['name'], row['fittnes_level'], row['duration'], row['id'])
         fittnes_classes.append(fittnes_class)
     return fittnes_classes
+
+def select(id):
+    fittnes_class = None
+    sql = "SELECT * FROM fittnes_classes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        fittnes_class = Fitnes_class(result['name'], result['fittnes_level'], result['duration'], result['id'] )
+    return fittnes_class

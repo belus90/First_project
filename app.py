@@ -1,14 +1,14 @@
 from flask import Flask, render_template
 
-from controllers.visit_controller import visits_blueprint
-from controllers.location_controller import locations_blueprint
-from controllers.user_controller import users_blueprint
+from controllers.fittnes_class_controller import fittnes_classes_blueprint
+from controllers.gym_controller import gyms_blueprint
+from controllers.member_controller import members_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(visits_blueprint)
-app.register_blueprint(locations_blueprint)
-app.register_blueprint(users_blueprint)
+app.register_blueprint(fittnes_classes_blueprint)
+app.register_blueprint(gyms_blueprint)
+app.register_blueprint(members_blueprint)
 
 @app.route('/')
 def home():

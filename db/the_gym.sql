@@ -1,8 +1,8 @@
 DROP TABLE gyms;
-DROP TABLE classes;
+DROP TABLE fittnes_classes;
 DROP TABLE members;
 
-CREATE TABLE classes (
+CREATE TABLE fittnes_classes (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
     fittnes_level VARCHAR (255),
@@ -20,7 +20,7 @@ CREATE TABLE members (
 CREATE TABLE gyms (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
-    class_id INT REFERENCES classes(id) ON DELETE CASCADE
+    fittnes_class_id INT REFERENCES fittnes_classes(id) ON DELETE CASCADE
 );
 
 

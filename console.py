@@ -7,8 +7,8 @@ import repositories.fittnes_class_repository as fittnes_class_repository
 import repositories.member_repository as member_repository
 import repositories.gym_repository as gym_repository
 
-# fittnes_class_repository.delete_all()
-# member_repository.delete_all()
+fittnes_class_repository.delete_all()
+member_repository.delete_all()
 # gym_repository.delete_all()
 
 fittness_class1 = Fitnes_class('Spining', 'Entry','30 min')
@@ -24,6 +24,8 @@ fittnes_class_repository.save(fittness_class3)
 member1 = Member('Claire', 'Toth', '09/23/1976','claire@gmail.com')
 member_repository.save(member1)
 
+gym1 = Gym(member1, fittness_class2)
+gym_repository.save(gym1)
 
 
 pdb.set_trace()

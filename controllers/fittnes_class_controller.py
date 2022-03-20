@@ -15,3 +15,4 @@ def show(id):
     fittnes_class = fittnes_repository.select(id)
     members = fittnes_repository.members(fittnes_class)
     return render_template("fittness classes/show.html", fittnes_class = fittnes_class, members = members)
+

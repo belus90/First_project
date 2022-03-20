@@ -24,6 +24,12 @@ def select_all():
         gyms.append(gym)
     return gyms 
 
+def select(id):
+    sql = "SELECT FROM gyms WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+    
 def delete_all():
     sql = "DELETE FROM gyms"
     run_sql(sql)

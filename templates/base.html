@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Gym</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+</head>
+<body>
+<main class="flex flex--row">
+  <nav>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="#">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/gyms">Gym</a>
+            <a href="/members">Member</a>
+            <a href="/fittnes_class">Fittnes Class</a>
+          </div>
+        </div> 
+      </div>
+      
+  </nav>
+  <section id="content">
+      {% block content %}
+
+      {% endblock%}
+  </section>
+  </main>
+</body>
+</html>

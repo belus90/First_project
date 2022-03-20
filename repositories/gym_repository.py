@@ -1,4 +1,3 @@
-from sys import getfilesystemencodeerrors
 from db.run_sql import run_sql
 from models.gym import Gym
 import repositories.fittnes_class_repository as fittnes_repository
@@ -19,7 +18,7 @@ def select_all():
 
     for row in result:
         member = member_repository.select(row['member_id'])
-        fittnes_class = fittnes_repository.select(row['fittnes_select_id'])
+        fittnes_class = fittnes_repository.select(row['fittnes_class_id'])
         gym = Gym(member, fittnes_class, row['id'])
         gyms.append(gym)
     return gyms 

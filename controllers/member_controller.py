@@ -11,3 +11,7 @@ def members():
     members = member_repository.select_all()
     return render_template("members/index.html", members = members)
 
+@members_blueprint.route("/members/<id>")
+def show(id):
+    member = member_repository.select(id)
+    return render_template("members/show.html", member = member)

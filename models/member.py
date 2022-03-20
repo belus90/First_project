@@ -7,5 +7,5 @@ class Member:
         self.email_address = email_address
         self.id = id
 
-def full_name(self):
-    return f"{self.first_name} {self.last_name}"
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"

@@ -2,6 +2,24 @@
 
 {% block content %}
 <h1>Members</h1>
-
-
+<table>
+    <tr>
+        <th>Name</th>
+        <th></th>
+        <th>E-mail</th>
+        <th></th>
+        <th>Date of Birth</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td>{{member.full_name() }}</td>
+        <td>|</td>
+        <td>{{ member.email_address}}</td>
+        <td>|</td>
+        <td>{{ member.date_of_birth }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="/"><button> Home </button></a>
 {% endblock %}

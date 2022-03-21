@@ -20,6 +20,9 @@
         <td><form action="/members/{{ member.id }}/delete" method="POST">
             <input class="btn btn--danger" type="submit" value="delete" />
         </form></td>
+        <td><form action="/members/{{ member.id }}/edit" method="POST">
+            <input class="btn btn--danger" type="submit" value="edit" />
+        </form></td>
     </tr>
     {% endfor %}
 </table>

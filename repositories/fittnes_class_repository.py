@@ -35,10 +35,10 @@ def delete_all():
     sql = "DELETE FROM fittnes_classes"
     run_sql(sql)
 
-# def delete(id):
-#     sql = "DELETE FROM fittnes_classes WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
+def delete(id):
+    sql = "DELETE FROM fittnes_classes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 def members(fittnes_class):
     members = []

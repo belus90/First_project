@@ -7,7 +7,7 @@ import repositories.fittnes_class_repository as fittnes_repository
 fittnes_classes_blueprint = Blueprint("fittness classes", __name__)
 
 @fittnes_classes_blueprint.route("/fittness classes")
-def fittnes_class():
+def members():
     fittnes_classes = fittnes_repository.select_all()
     return render_template("fittness classes/index.html", fittnes_classes = fittnes_classes)
 
@@ -31,4 +31,10 @@ def create_new_class():
     duration = request.form['duration']
     new_class = Fitnes_class(name, fittnes_level, duration)
     fittnes_repository.save(new_class)
+    return redirect('/fittness classes')
+
+#delete
+@fittnes_classes_blueprint.route("/fittness classes/<id>/delete", methods=['POST'])
+def delete_class(id):
+    fittnes_repository.delete(id)
     return redirect('/fittness classes')

@@ -32,3 +32,9 @@ def create_member():
     member = Member(first_name, last_name, email_address, date_of_birth)
     member_repository.save(member)
     return redirect('/members')
+
+#delete
+@members_blueprint.route("/members/<id>/delete", methods=['POST'])
+def delete_member(id):
+    member_repository.delete(id)
+    return redirect('/members')

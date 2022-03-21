@@ -13,3 +13,9 @@ gyms_blueprint = Blueprint("gyms", __name__)
 def gyms():
     gyms = gym_repository.select_all() 
     return render_template("gyms/index.html", gyms = gyms)
+
+
+@gyms_blueprint.route("/gyms/<id>/delete", methods=['POST'])
+def delete_member(id):
+    gym_repository.delete(id)
+    return redirect('/gym')

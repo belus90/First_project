@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Gyms</h1>
+<h1>Gym members and their Classes</h1>
+
+<ul>
+  {% for gym  in gyms %}
+  <li>
+  <p>Name: {{ gym.member.full_name() }} </p> 
+  <p>Fittnes Class: {{ gym.fittnes_class.name }}</p>
+    <p>
+      <form action="/gyms/{{ gym.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li> <br>
+  {% endfor %}
+</ul>
+
 
 {% endblock %}

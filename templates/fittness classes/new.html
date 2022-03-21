@@ -1,28 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 <br>
-<form action="/fittness classes" method="post">
+<div>
+    <form action="/fittness classes" method="post">
+            <div>
+                <label for="name">Fittnes Class:</label>
+                <input type="text" id="name" name="name" placeholder="Fittness Class" required autofocus>
+            </div>
 
-    <div>
-        <label for="name">Fittnes Class:</label>
-        <input type="text" id="name" name="name" placeholder="Fittness Class" required autofocus>
-    </div>
-
-    <div>
-    <label for="fittnes_level">Choose a fittnes level:</label>
-    <select name="fittnes_level" id="fittnes_level">
-        <option value="entry">Entry</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-    <div>
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" placeholder="Duration" required autofocus>
-    </div>
-
-    <br>
-    <button type="submit">Add Fittnes Class</button>
-
-</form>
+            <div>
+            <label for="fittnes_level">Choose a fittnes level:</label>
+            <select name="fittnes_level" id="fittnes_level">
+                <option value="entry">Entry</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <div>
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" name="duration" placeholder="Duration" required autofocus>
+            </div>
+            <br>
+            <button type="submit">Add Fittnes Class</button>
+    </form>
+</div>
+<p><a href="/fittness classes"><button> Go Back </button></a>
+</p>
 
 {% endblock %}

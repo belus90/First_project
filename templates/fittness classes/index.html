@@ -6,15 +6,25 @@
 <table>
     <tr>
         <th>Name:</th>
+        <th></th>
+        <th>Fittnes Level:</th>
+        <th></th>
         <th>Duration:</th>
         <th></th>
     </tr>
     {% for fittnes_class in fittnes_classes %}
     <tr>
         <td><a href="/fittness classes/{{ fittnes_class.id }}"> {{fittnes_class.name}} </a></td>
+        <th></th>
+        <td>{{fittnes_class.fittnes_level }}</td>
+        <th></th>
         <td>{{fittnes_class.duration }}</td>
+        <th></th>
         <td><form action="/fittness classes/{{ fittnes_class.id }}/delete" method="POST">
             <input class="btn btn--danger" type="submit" value="delete" />
+        </form></td>
+        <td><form action="/fittness classes/{{ fittnes_class.id }}/edit" method="POST">
+            <input class="btn btn--danger" type="submit" value="edit" />
         </form></td>
     </tr>
     {% endfor %}

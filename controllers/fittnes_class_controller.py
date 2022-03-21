@@ -38,3 +38,20 @@ def create_new_class():
 def delete_class(id):
     fittnes_repository.delete(id)
     return redirect('/fittness classes')
+
+#edit
+@fittnes_classes_blueprint.route("/fittness classes/<id>/edit", methods=['GET', 'POST'])
+def edit_fittnes_class(id):
+    fittnes_class = fittnes_repository.select(id)
+    return render_template("/fittness classes/edit.html", fittnes_class = fittnes_class)
+
+
+#update
+@fittnes_classes_blueprint.route("/fittness classes/<id>", methods=['POST'])
+def update_class(id):
+    name = request.form['name']
+    fittnes_level = request.form['fittnes_level']
+    duration = request.form['duration']
+    fittnes_clas = Fitnes_class(name,fittnes_level,duration, id)
+    fittnes_repository.update(fittnes_clas)
+    return redirect('/fittness classes')

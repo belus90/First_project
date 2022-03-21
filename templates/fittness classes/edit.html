@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/fittness classes/{{ fittnes_class.id }}" method="post">
+    <br>
+    <div>
+        <label for="name">Class Name:</label>
+        <input type="text" id="name" name="name" value="{{fittnes_class.name}}" required>
+    </div>
+
+    <div>
+        <label for="fittnes_level">Fittnes Level:</label>
+        <select name="fittnes_level" id="fittnes_level">
+            <option value="entry">Entry</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" value="{{fittnes_class.duration}}" required autofocus>
+    </div>
+    <button type="submit">Update Fittnes Class</button>
+</form>
+
+
+
+{% endblock %}

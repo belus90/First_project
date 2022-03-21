@@ -51,8 +51,8 @@ def members(fittnes_class):
         members.append(member)
     return members
     
-# def update(fittnes_class):
-#     sql = "UPDATE fittnes_classes SET (name, fittnes_level, duration) = (%s, %s, %s) WHERE id = %s"
-#     values = [fittnes_class.name, fittnes_class.fittnes_level, fittnes_class.duration, fittnes_class.id]
-#     print(values)
-#     run_sql(sql, values)
+def update(fittnes_class):
+    sql = "UPDATE fittnes_classes SET (name, fittnes_level, duration) = (%s, %s, %s) WHERE id = %s"
+    values = [fittnes_class.name, fittnes_class.fittnes_level, fittnes_class.duration, fittnes_class.id]
+    print(values)
+    run_sql(sql, values)

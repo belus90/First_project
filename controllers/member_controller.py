@@ -45,14 +45,14 @@ def delete_member(id):
     member_repository.delete(id)
     return redirect('/members')
 
+
+
 @members_blueprint.route("/members/<id>", methods=['POST'])
 def update_member(id):
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     email_address = request.form['email_address']
     date_of_birth = request.form['date_of_birth']
-    print('update', first_name)
     member = Member(first_name,last_name,email_address,date_of_birth, id)
-    print(member)
     member_repository.update(member)
     return redirect('/members')

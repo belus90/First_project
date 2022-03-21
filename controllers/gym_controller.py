@@ -19,3 +19,22 @@ def gyms():
 def delete_member(id):
     gym_repository.delete(id)
     return redirect('/gym')
+
+@gyms_blueprint.route("/gyms/new", methods=['GET'])
+def new_task():
+    members = member_repository.select_all()
+    fittnes_classes = fittnes_class_repository.select_all()
+    return render_template("gyms/new.html", members = members, fittnes_classes = fittnes_classes)
+
+# CREATE
+# POST '/visits'
+
+@gyms_blueprint.route("/gyms",  methods=['POST'])
+def create_gym():
+    member_id = request.form['member_id']
+    fittnes_class_id = request.form['fittnes_class_id']
+    member = member_repository.select(member_id)
+    fittnes_class = fittnes_class_repository.select(fittnes_class_id)
+    gym = Gym(member, fittnes_class)
+    gym_repository.save(gym)
+    return redirect('/gyms')

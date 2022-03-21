@@ -8,15 +8,15 @@
         <th></th>
         <th>E-mail</th>
         <th></th>
-        <th>Date of Birth</th>
+        <th>Date Of Birth</th>
     </tr> 
     {% for member in members %}
     <tr>
         <td>{{member.full_name() }}</td>
         <td>|</td>
-        <td>{{ member.email_address}}</td>
+        <td>{{ member.date_of_birth}}</td>
         <td>|</td>
-        <td>{{ member.date_of_birth }}</td>
+        <td>{{ member.email_address }}</td>
         <td><form action="/members/{{ member.id }}/delete" method="POST">
             <input class="btn btn--danger" type="submit" value="delete" />
         </form></td>

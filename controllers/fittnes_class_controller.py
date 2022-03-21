@@ -7,7 +7,7 @@ import repositories.fittnes_class_repository as fittnes_repository
 fittnes_classes_blueprint = Blueprint("fittness classes", __name__)
 
 @fittnes_classes_blueprint.route("/fittness classes")
-def members():
+def fittnes_class():
     fittnes_classes = fittnes_repository.select_all()
     return render_template("fittness classes/index.html", fittnes_classes = fittnes_classes)
 
@@ -19,16 +19,16 @@ def show(id):
 
 #new
 @fittnes_classes_blueprint.route("/fittness classes/new", methods = ['GET'])
-def new_member():
-    members = member_repository.select_all()
-    return render_template("/members/new.html", members = members)
+def new_class():
+    fittnes_classes = fittnes_repository.select_all()
+    return render_template("/fittness classes/new.html", fittnes_classes = fittnes_classes)
+
 #create
-@members_blueprint.route("/members", methods = ['POST'])
-def create_member():
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
-    email_address = request.form['email_address']
-    date_of_birth = request.form['date_of_birth']
-    member = Member(first_name, last_name, email_address, date_of_birth)
-    member_repository.save(member)
-    return redirect('/members')
+@fittnes_classes_blueprint.route("/fittness classes", methods = ['POST'])
+def create_new_class():
+    name = request.form['name']
+    fittnes_level = request.form['fittnes_level']
+    duration = request.form['duration']
+    new_class = Fitnes_class(name, fittnes_level, duration)
+    fittnes_repository.save(new_class)
+    return redirect('/fittness classes')

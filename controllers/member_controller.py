@@ -21,6 +21,7 @@ def show(id):
 def new_member():
     members = member_repository.select_all()
     return render_template("/members/new.html", members = members)
+    
 #create
 @members_blueprint.route("/members", methods = ['POST'])
 def create_member():

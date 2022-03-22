@@ -21,7 +21,7 @@ fittnes_class_repository.save(fittness_class2)
 fittness_class3 = Fitnes_class('Absolute Abs', 'Hard','25min')
 fittnes_class_repository.save(fittness_class3)
 
-member1 = Member('Claire', 'Toth', 'claire@gmail.com','09/23/1976',)
+member1 = Member('Claire', 'Toth','claire@gmail.com','09/23/1976')
 member_repository.save(member1)
 
 
@@ -29,7 +29,7 @@ member2 = Member('Sarah', 'Willams','sarah.45@hotmail.com','14/04/2000')
 member_repository.save(member2)
 
 
-member3 = Member('Balint', 'Szabo','balint@gmail.com', '08/12/1995')
+member3 = Member('Balint', 'Szabo','balint@gmail.com',  '08/12/1995')
 member_repository.save(member3)
 
 gym1 = Gym(member1, fittness_class2)

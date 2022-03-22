@@ -13,8 +13,9 @@ CREATE TABLE members (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR (255),
     last_name VARCHAR (255),
-    date_of_birth VARCHAR (255),
-    email_address VARCHAR (255)
+    email_address VARCHAR (255),
+    date_of_birth VARCHAR (255)
+    
 );
 
 CREATE TABLE gyms (

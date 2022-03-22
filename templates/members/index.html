@@ -2,34 +2,28 @@
 
 {% block content %}
 <h1>Members</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th></th>
-        <th>Date Of Birth</th>
-        <th></th>
-        <th>Email-address</th>
-    </tr> 
-    {% for member in members %}
-    <tr>
-        <td>{{member.full_name() }}</td>
-        <td>|</td>
-        <td>{{ member.date_of_birth}}</td>
-        <td>|</td>
-        <td>{{ member.email_address }}</td>
-        <td><form action="/members/{{ member.id }}/delete" method="POST">
-            <input class="btn btn--danger" type="submit" value="delete" />
-        </form></td>
-        <td><form action="/members/{{ member.id }}/edit" method="POST">
-            <input class="btn btn--danger" type="submit" value="edit" />
-        </form></td>
-    </tr>
-    {% endfor %}
-</table>
-<br>
 <p class="btn--wrapper">
     <a class="btn btn--action" href="/members/new">New Member</a>
 </p>
+<ul>
+    {% for member in members %}
+    <ul>
+    <p>{{ member.full_name() }} </p>
+    <p>{{ member.date_of_birth }}</p>
+    <p>{{ member.email_address }}</p>
+      <p>
+        <form action="/members/{{ member.id }}/delete" method="POST">
+          <input class="btn btn--danger" type="submit" value="delete" />
+        </form>
+        <form action="/members/{{ member.id }}/edit" method="POST">
+            <input class="btn btn--danger" type="submit" value="edit" />
+          </form>
+      </p>
+    </ul>
+    {% endfor %}
+  </ul>
+  
+<
 <br>  
 <a href="/"><button> Home </button></a>
 {% endblock %}

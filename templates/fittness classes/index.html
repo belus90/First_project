@@ -2,35 +2,36 @@
 
 {% block content %}
 <h1>Fittnes Classes</h1>
-
-<table>
-    <tr>
-        <th>Name:</th>
-        <th></th>
-        <th>Fittnes Level:</th>
-        <th></th>
-        <th>Duration:</th>
-        <th></th>
-    </tr>
-    {% for fittnes_class in fittnes_classes %}
-    <tr>
-        <td><a href="/fittness classes/{{ fittnes_class.id }}"> {{fittnes_class.name}} </a></td>
-        <th></th>
-        <td>{{fittnes_class.fittnes_level }}</td>
-        <th></th>
-        <td>{{fittnes_class.duration }}</td>
-        <th></th>
-        <td><form action="/fittness classes/{{ fittnes_class.id }}/delete" method="POST">
-            <input class="btn btn--danger" type="submit" value="delete" />
-        </form></td>
-        <td><form action="/fittness classes/{{ fittnes_class.id }}/edit" method="POST">
-            <input class="btn btn--danger" type="submit" value="edit" />
-        </form></td>
-    </tr>
-    {% endfor %}
-</table>
-<p class="btn--wrapper">
-    <a class="btn btn--action" href="/fittness classes/new">New Fittness Class</a></p>
-    <br>
-<a href="/"><button> Home </button></a>
+<section>
+    <table class="fitnes_table">
+        <tr class="names">
+            <th>Name:</th>
+            <th></th>
+            <th>Fittnes Level:</th>
+            <th></th>
+            <th>Duration:</th>
+            <th></th>
+        </tr>
+        {% for fittnes_class in fittnes_classes %}
+        <tr class="tr">
+            <td><a class="link" href="/fittness classes/{{ fittnes_class.id }}"> {{fittnes_class.name}} </a></td>
+            <th></th>
+            <td class="fittnes">{{fittnes_class.fittnes_level }}</td>
+            <th></th>
+            <td class="fittnes">{{fittnes_class.duration }}</td>
+            <th></th>
+            <td><form action="/fittness classes/{{ fittnes_class.id }}/delete" method="POST">
+                <input class="btn btn--danger" type="submit" value="delete" />
+            </form></td>
+            <td><form action="/fittness classes/{{ fittnes_class.id }}/edit" method="POST">
+                <input class="btn btn--danger" type="submit" value="edit" />
+            </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p class="btn--wrapper">
+        <a class="btn btn--action" href="/fittness classes/new">New Fittness Class</a></p>
+        <br>
+    <a href="/"><button> Home </button></a>
+</section>
 {% endblock %}

@@ -1,0 +1,26 @@
+.fitnes_table{
+    border: 2px solid  antiquewhite;
+    
+}
+
+.fittnes{
+    color: antiquewhite;
+    text-align: center;
+}
+
+.names {
+    color: black;
+    text-align: left;
+    margin: 0 auto;
+} 
+
+.link{
+    color: antiquewhite;
+}
+
+h1 {
+    color: antiquewhite;
+}
+section{
+    align-items: center;
+}

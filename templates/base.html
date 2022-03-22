@@ -5,9 +5,9 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
   
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='fittnes class/index.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
 </head>
 <body>
@@ -17,7 +17,7 @@
         <a href="/">Home</a>
         <a href="#">Contact</a>
         <div class="dropdown">
-          <button class="dropbtn">Dropdown 
+          <button class="dropbtn">Menu
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
@@ -27,7 +27,6 @@
           </div>
         </div> 
       </div>
-      
   </nav>
   <section id="content">
       {% block content %}

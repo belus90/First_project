@@ -1,0 +1,13 @@
+.new-class {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 25vw;
+    /* background: url('/static/img/pexels-photo-4325436.jpeg'); */
+    background-color: #adb5bd;
+    padding: 10px;
+    margin:auto;
+    border: 2px solid antiquewhite;
+    text-align: center;
+    justify-content: center;
+}

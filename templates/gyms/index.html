@@ -2,16 +2,17 @@
 
 {% block content %}
 <h1>The Gym</h1>
+<section>
 <p class="btn--wrapper">
   <a href="/gyms/new"><button class="button">Create New Gym </button></a> &ensp;
   <a href="/"><button class="button"> Home </button></a>
 </p>
 
-<ul class="flex-container">
+<ul  class="flex-container">
   {% for gym in gyms %}
   <li class="gym">
-    <p>{{ gym.member.full_name() }} </p>
-    <p>{{ gym.fittnes_class.name }}</p>
+    <p>Members Name: {{ gym.member.full_name() }} </p>
+    <p>Fittnes Class: {{ gym.fittnes_class.name }}</p>
       <p>
         <form action="/gyms/{{ gym.id }}/delete" method="POST">
           <input class="button" type="submit" value="delete" />
@@ -21,5 +22,5 @@
   {% endfor %}
 </ul>
 
-
+</section>
 {% endblock %}

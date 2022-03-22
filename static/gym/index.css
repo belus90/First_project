@@ -4,6 +4,7 @@
     justify-content: space-around;
 }
 
+
 .gym {
     display: flex;
     flex-direction: column;
@@ -13,9 +14,7 @@
     padding: 10px;
     margin:20px;
     border: 2px solid antiquewhite;
-    /* margin: auto;
-    width: 300px;
-    height: 300px; */
+    text-align: center;
 }
 
 h1 {
@@ -30,5 +29,4 @@ h1 {
     text-align: center;
     border-radius: 20px;
     border: 1px solid antiquewhite;   
- }
-      
+}

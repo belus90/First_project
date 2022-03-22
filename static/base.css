@@ -66,3 +66,14 @@ body {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  .log-in{
+    font-size: 20px;  
+    border: none;
+    outline: none;
+    color: rgb(59, 57, 57);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }

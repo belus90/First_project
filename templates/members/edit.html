@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="flex-container">
-  <form action="/members/{{member.id}}" method="post">
-      <div>
-        <label class="details" for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="{{member.first_name}}" required>
+    <form action="/members/{{member.id}}" method="post">
+        <div>
+          <label class="details" for="first_name">First Name:</label>
+          <input type="text" id="first_name" name="first_name" value="{{member.first_name}}" required>
+        </div>
+      
+        <div>
+          <label class="details" for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="last_name" value="{{member.last_name}}" required>
+        </div>
+        <div>
+          <label class="details" for="email_addressl">e-mail:</label>
+          <input type="email" id="email_address" name="email_address", value="{{member.email_address}}"required autofocus>
       </div>
-    
-      <div>
-        <label class="details" for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value="{{member.last_name}}" required>
-      </div>
-      <div>
-        <label class="details" for="email_addressl">e-mail:</label>
-        <input type="email" id="email_address" name="email_address", value="{{member.email_address}}"required autofocus>
-    </div>
-      <div>
-        <label class="details" for="date_of_birth">Date Of Birth:</label>
-        <input type="text" id="date_of_birth" name="date_of_birth" value="{{member.date_of_birth}}" required autofocus>
-      </div>
-      <button class="button" type="submit">Edit </button>
-  </form><br>
-  <a href="/members"><button class="button"> Go Back </button></a>
+        <div>
+          <label class="details" for="date_of_birth">Date Of Birth:</label>
+          <input type="text" id="date_of_birth" name="date_of_birth" value="{{member.date_of_birth}}" required autofocus>
+        </div>
+        <button class="button" type="submit">Edit </button>
+    </form><br>
+    <a href="/members"><button class="button"> Go Back </button></a>
 </div>
 {% endblock %}

@@ -9,9 +9,9 @@
 <ul class="flex-container">
     {% for member in members %}
     <ul class="member">
-    <p>{{ member.full_name() }} </p>
-    <p>{{ member.date_of_birth }}</p>
-    <p>{{ member.email_address }}</p>
+    <p>Name: {{ member.full_name() }} </p>
+    <p>Date Of Birth: {{ member.date_of_birth }}</p>
+    <p>E-mail: {{ member.email_address }}</p>
       <p>
         <form action="/members/{{ member.id }}/delete" method="POST">
           <input class="button" type="submit" value="delete" />

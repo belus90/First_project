@@ -6,11 +6,8 @@
     /* background: url('/static/img/pexels-photo-4325436.jpeg'); */
     background-color: #adb5bd;
     padding: 10px;
-    margin:20px;
+    margin:auto;
     border: 2px solid antiquewhite;
     text-align: center;
     justify-content: center;
-    /* margin: auto;
-    width: 300px;
-    height: 300px; */
 }

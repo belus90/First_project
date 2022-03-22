@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Visit</h1>
+<h1>Adding a Member to a Specific Class</h1>
 
 <form action="/gyms" method="post">
-    <label for="member">Select a member:</label>
+    <label class="name" for="member">Select a member:</label>
         <select name="member_id" id="member">
         {% for member in members %}
         <option value="{{ member.id }}">{{ member.full_name() }}</option>
         {% endfor %}
         </select>
     
-    <label for="fittnes_class">Select a class:</label>
+    <label class="name" for="fittnes_class">Select a class:</label>
         <select name="fittnes_class_id" id="fittnes_class">
         {% for fittnes_class in fittnes_classes %}
         <option value="{{ fittnes_class.id }}">{{ fittnes_class.name}}</option>
         {% endfor %}
-        </select>
-    <input class="btn btn--action" type='submit' value="Gym">
+        </select> &ensp;
+    <input class="button" type='submit' value="Gym">
 </form>
 <br>
-<a href="/gyms"><button> Go Back </button></a>
+<a href="/gyms"><button class="button"> Go Back </button></a>
 {% endblock %}

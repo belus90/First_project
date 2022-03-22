@@ -3,27 +3,26 @@
 {% block content %}
 <h1>Members</h1>
 <p class="btn--wrapper">
-    <a class="btn btn--action" href="/members/new">New Member</a>
+  <a href="/members/new"><button class="button"> New Member </button></a> 
+  <a href="/"><button class="button"> Home </button></a>
 </p>
-<ul>
+<ul class="flex-container">
     {% for member in members %}
-    <ul>
+    <ul class="member">
     <p>{{ member.full_name() }} </p>
     <p>{{ member.date_of_birth }}</p>
     <p>{{ member.email_address }}</p>
       <p>
         <form action="/members/{{ member.id }}/delete" method="POST">
-          <input class="btn btn--danger" type="submit" value="delete" />
-        </form>
+          <input class="button" type="submit" value="delete" />
+        </form><br>
         <form action="/members/{{ member.id }}/edit" method="POST">
-            <input class="btn btn--danger" type="submit" value="edit" />
+            <input class="button" type="submit" value="edit" />
           </form>
       </p>
     </ul>
     {% endfor %}
   </ul>
-  
-<
 <br>  
-<a href="/"><button> Home </button></a>
+
 {% endblock %}

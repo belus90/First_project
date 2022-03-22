@@ -3,27 +3,25 @@
 {% block content %}
 <h1>Fittnes Classes</h1>
 <p class="btn--wrapper">
-    <a class="btn btn--action" href="/fittnes_class/new">New Member</a>
+    <a href="/fittness classes/new"><button class="button">Create New Class </button></a> &ensp;
+    <a href="/"><button class="button"> Home </button></a>
 </p>
-<ul>
+<ul class="flex-container">
     {% for fittnes_class in fittnes_classes %}
-    <ul>
-    <p>{{ fittnes_class.name }} </p>
-    <p>{{ fittnes_class.fittnes_level }}</p>
-    <p>{{ fittnes_class.duration }}</p>
-      <p>
-        <form action="/fittnes_classes/{{ fittnes_class.id }}/delete" method="POST">
-          <input class="btn btn--danger" type="submit" value="delete" />
+    <ul class="fitnes_classes">
+        <td><a href="/fittness classes/{{ fittnes_class.id }}"> Class Name: {{fittnes_class.name}} </a></td>
+    <p>Fittnes Level: {{ fittnes_class.fittnes_level }}</p>
+    <p>Duration: {{ fittnes_class.duration }}</p>
+    <p>
+        <form action="/fittness classes/{{ fittnes_class.id }}/delete" method="POST">
+        <input class="button" type="submit" value="delete" />
+        </form> <br>
+        <form action="/fittness classes/{{ fittnes_class.id }}/edit" method="POST">
+            <input class="button" type="submit" value="edit" />
         </form>
-        <form action="/fittnes_classes/{{ fittnes_class.id }}/edit" method="POST">
-            <input class="btn btn--danger" type="submit" value="edit" />
-          </form>
-      </p>
+    </p>
     </ul>
     {% endfor %}
   </ul>
-  
-<
-<br>  
-<a href="/"><button> Home </button></a>
+<br> 
 {% endblock %}

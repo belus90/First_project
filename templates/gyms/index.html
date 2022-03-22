@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Visits</h1>
-<a href="/"><button> Home </button></a><br>
+<h1>The Gym</h1>
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/gyms/new">New</a>
+  <a href="/gyms/new"><button class="button">Create New Gym </button></a> &ensp;
+  <a href="/"><button class="button"> Home </button></a>
 </p>
 
-<ul>
+<ul class="flex-container">
   {% for gym in gyms %}
-  <li>
-  <p>{{ gym.member.full_name() }} </p>
-  <p>{{ gym.fittnes_class.name }}</p>
-    <p>
-      <form action="/gyms/{{ gym.id }}/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
+  <li class="gym">
+    <p>{{ gym.member.full_name() }} </p>
+    <p>{{ gym.fittnes_class.name }}</p>
+      <p>
+        <form action="/gyms/{{ gym.id }}/delete" method="POST">
+          <input class="button" type="submit" value="delete" />
+        </form>
+      </p>
   </li>
   {% endfor %}
 </ul>

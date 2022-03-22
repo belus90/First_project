@@ -1,4 +1,34 @@
-.btn btn--danger{
-    color:antiquewhite;
-
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+.gym {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    /* background: url('/static/img/pexels-photo-4325436.jpeg'); */
+    background-color: #adb5bd;
+    padding: 10px;
+    margin:20px;
+    border: 2px solid antiquewhite;
+    /* margin: auto;
+    width: 300px;
+    height: 300px; */
+}
+
+h1 {
+    text-align: center;
+    color: antiquewhite;
+    text-decoration: underline;
+    }
+    
+.button {
+    background-color: #adb5bd;
+    /* color: antiquewhite; */
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid antiquewhite;   
+ }
+      

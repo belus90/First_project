@@ -16,12 +16,12 @@ def gyms():
 
 
 @gyms_blueprint.route("/gyms/<id>/delete", methods=['POST'])
-def delete_member(id):
+def delete_gym(id):
     gym_repository.delete(id)
     return redirect('/gym')
 
 @gyms_blueprint.route("/gyms/new", methods=['GET'])
-def new_task():
+def new_gym():
     members = member_repository.select_all()
     fittnes_classes = fittnes_class_repository.select_all()
     return render_template("gyms/new.html", members = members, fittnes_classes = fittnes_classes)

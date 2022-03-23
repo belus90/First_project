@@ -1,28 +1,4 @@
-.button{
-        background-color: #adb5bd;
-        text-align: center;
-        border-radius: 20px;
-        border: 1px solid antiquewhite;   
-}
-
-.details{
-    display: flex;
-    flex-direction: column;
-    width: 20vw;
-    background-color: #adb5bd;
-    padding: 10px;
-    margin:20px;
-    border: 2px solid antiquewhite;
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-
-}
-
-.new-class {
+.edit-member {
     display: flex;
     flex-direction: column;
     width: 25vw;

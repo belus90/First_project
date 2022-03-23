@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+<br>
     <section class="edit-class">
         <form action="/fittness classes/{{ fittnes_class.id }}" method="post">
-            <br>
             <div>
                 <label for="name">Class Name:</label>
                 <input type="text" id="name" name="name" value="{{fittnes_class.name}}" required>
@@ -16,8 +16,7 @@
                     <option value="hard">Hard</option>
                 </select>
             </div><br>
-
-            <div>
+            <div><br>
                 <label for="duration">Duration:</label>
                 <input type="text" id="duration" name="duration" value="{{fittnes_class.duration}}" required autofocus>
             </div><br>

@@ -30,6 +30,12 @@ def select(id):
     if result is not None:
         fittnes_class = Fitnes_class(result['name'], result['fittnes_level'], result['duration'], result['id'] )
     return fittnes_class
+ 
+def update(fittnes_class):
+    sql = "UPDATE fittnes_classes SET (name, fittnes_level, duration) = (%s, %s, %s) WHERE id = %s"
+    values = [fittnes_class.name, fittnes_class.fittnes_level, fittnes_class.duration, fittnes_class.id]
+    print(values)
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM fittnes_classes"
@@ -50,9 +56,3 @@ def members(fittnes_class):
         member = Member(row['first_name'], row['last_name'], row['date_of_birth'], row['email_address'], row['id'])
         members.append(member)
     return members
-    
-def update(fittnes_class):
-    sql = "UPDATE fittnes_classes SET (name, fittnes_level, duration) = (%s, %s, %s) WHERE id = %s"
-    values = [fittnes_class.name, fittnes_class.fittnes_level, fittnes_class.duration, fittnes_class.id]
-    print(values)
-    run_sql(sql, values)

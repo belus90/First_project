@@ -30,6 +30,12 @@ def select(id):
     if result is not None:
         member = Member(result['first_name'], result['last_name'], result['email_address'], result['date_of_birth'], result['id'] )
     return member
+    
+def update(member):
+    sql = "UPDATE members SET (first_name, last_name,  email_address, date_of_birth) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.email_address, member.date_of_birth, member.id]
+    print(values)
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM members"
@@ -40,9 +46,4 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def update(member):
-    sql = "UPDATE members SET (first_name, last_name,  email_address, date_of_birth) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.email_address, member.date_of_birth, member.id]
-    print(values)
-    run_sql(sql, values)
 

@@ -18,7 +18,7 @@ def gyms():
 @gyms_blueprint.route("/gyms/<id>/delete", methods=['POST'])
 def delete_gym(id):
     gym_repository.delete(id)
-    return redirect('/gym')
+    return redirect('/gyms')
 
 @gyms_blueprint.route("/gyms/new", methods=['GET'])
 def new_gym():
